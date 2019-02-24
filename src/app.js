@@ -5,6 +5,7 @@ const path = require('path');
 const exphbs = require('express-handlebars');
 
 const app = express();
+require('./database');
 
 // expres config
 app.set('port', 3000);
