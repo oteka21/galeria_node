@@ -4,14 +4,14 @@
             <div class="card-body">
                 <form action="/images/add" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
-                    <input type="text" name="title" class="form-control" placeholder="Image title">
+                        <input type="text" name="title" class="form-control" placeholder="Image title" required>
                     </div>
                     <div class="form-groput">
-                        <textarea name="description" id="" cols="30" rows="10" class="form-control"></textarea>
+                        <textarea name="description" id="" cols="30" rows="10" class="form-control" required></textarea>
                     </div>
                     <div class="input-group mb-3">
                         <div class="custom-file">
-                            <input type="file" name="image" id="inputGroupFile01" class="custom-file-input">
+                            <input type="file" name="image" id="inputGroupFile01" class="custom-file-input" required>
                             <label for="inputGroupFile01" class="custom-file-label">Choose a file</label>
                         </div>
                     </div>
@@ -21,5 +21,38 @@
                 </form>
             </div>
         </div>
+    </div>
+    <div class="col-md-8">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        TITLE
+                    </th>
+                    <th>
+                        DESCRIPTION
+                    </th>
+                    <th>
+                        OPERATIONS
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each photos}}
+                <tr>
+                    <td>
+                        {{title}}
+                    </td>
+                    <td>
+                        {{description}}
+                    </td>
+                    <td>
+                        <a href="{{image_url}}" target="_blank" class="btn btn-primary">View</a>
+                        <a href="/images/delete/{{_id}}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
     </div>
 </div>
