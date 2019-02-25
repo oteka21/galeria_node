@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/gallery_node_db',{
+
+mongoose.connect(process.env.DB_HOST,{
     useNewUrlParser: true,
 })
 .then(db => console.log('database is connected'))
