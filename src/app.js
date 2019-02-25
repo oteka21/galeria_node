@@ -35,4 +35,7 @@ app.use(multer({ storage }).single('image'));
 //routes
 app.use(require('./routes'));
 
+//api
+app.use(require('./api'));
+
 module.exports = app;
